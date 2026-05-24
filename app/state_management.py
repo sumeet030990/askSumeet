@@ -17,7 +17,7 @@ def dummy_state():
 
 def initialize_session_state():
         if "session_started" not in st.session_state:
-                dummy_state()  # For development, replace with empty_state() for production
+                empty_state()  # For development, replace with empty_state() for production
    
             
 def make_message(role: str, content: str) -> dict:

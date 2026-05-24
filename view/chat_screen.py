@@ -48,7 +48,8 @@ def load_chat_screen():
 
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            reply = str(st.write_stream(generate_ai_response(prompt, chat_history=st.session_state.get("messages", []))))
+            reply = generate_ai_response(prompt, chat_history=st.session_state.get("messages", []))
+        st.markdown(reply)
 
     assistant_msg = make_message("assistant", reply)
     st.session_state["messages"].append(assistant_msg)
