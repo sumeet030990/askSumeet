@@ -1,10 +1,41 @@
 {
   "2026-05-24": {
-    "c08322e5-9540-4a1c-b18e-6a43bc0e92d8": {
-      "started_at": "2026-05-24T16:11:54",
-      "last_active": "2026-05-24T16:12:58",
+    "7536bf35-6e83-4f5f-94c9-b138a942ecf6": {
+      "started_at": "2026-05-24T16:19:28",
+      "last_active": "2026-05-24T16:19:55",
       "user": {
-        "name": "sam",
+        "name": "rudra",
+        "email": "",
+        "phone": ""
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "your total experience?",
+          "timestamp": "2026-05-24T16:19:31"
+        },
+        {
+          "role": "assistant",
+          "content": "I have 9+ years of experience in full-stack web development, working across startups, mid-size companies, and enterprise clients from the US and UK.",
+          "timestamp": "2026-05-24T16:19:44"
+        },
+        {
+          "role": "user",
+          "content": "exactly how much",
+          "timestamp": "2026-05-24T16:19:54"
+        },
+        {
+          "role": "assistant",
+          "content": "I have 9 years and 9 months of experience in full-stack web development as of September 2023.",
+          "timestamp": "2026-05-24T16:19:55"
+        }
+      ]
+    },
+    "ea028bb8-e945-4fc1-bac5-64cf1aca4fc4": {
+      "started_at": "2026-05-24T16:21:41",
+      "last_active": "2026-05-24T16:21:44",
+      "user": {
+        "name": "rudra",
         "email": "",
         "phone": ""
       },
@@ -12,22 +43,12 @@
         {
           "role": "user",
           "content": "hi",
-          "timestamp": "2026-05-24T16:11:57"
+          "timestamp": "2026-05-24T16:21:43"
         },
         {
           "role": "assistant",
-          "content": "It's nice to chat with you. Is there something I can help you with or would you like to know more about me, Sumeet?",
-          "timestamp": "2026-05-24T16:12:13"
-        },
-        {
-          "role": "user",
-          "content": "where are you currently located?",
-          "timestamp": "2026-05-24T16:12:27"
-        },
-        {
-          "role": "assistant",
-          "content": "I'm currently based in Nagpur, Maharashtra, India.",
-          "timestamp": "2026-05-24T16:12:58"
+          "content": "Hello. How can I assist you today?",
+          "timestamp": "2026-05-24T16:21:44"
         }
       ]
     }

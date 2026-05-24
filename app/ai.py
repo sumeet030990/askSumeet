@@ -1,12 +1,17 @@
 import os
 
+import streamlit as st
 from app.context import load_context
 from groq import Groq
 
+
+@st.cache_resource
+def _get_groq_client() -> Groq:
+    return Groq(api_key=os.environ.get("GROQ_API_KEY"))
+
+
 def generate_ai_response(prompt, chat_history=None):
-    client = Groq(
-         api_key=os.environ.get("GROQ_API_KEY"),
-    )
+    client = _get_groq_client()
     context = load_context()
     system_instruction = ("You are a virtual version of Sumeet Jadhav."
     " Speak in first person as Sumeet, with a confident, practical, and humble tone.\n\n"
@@ -34,6 +39,17 @@ def generate_ai_response(prompt, chat_history=None):
         {"role": "user", "content": prompt},
     ]
     
-    chat_completion = client.chat.completions.create(messages=messages, model=os.environ.get("AI_MODEL_NAME") or "llama-3.1-8b-instant", max_tokens=500)
-    response_content = chat_completion.choices[0].message.content
-    return response_content.strip() if response_content else ""
+    stream = client.chat.completions.create(
+        messages=messages,
+        model=os.environ.get("AI_MODEL_NAME") or "llama-3.1-8b-instant",
+        max_tokens=500,
+        stream=True,
+    )
+
+    def token_generator():
+        for chunk in stream:
+            token = chunk.choices[0].delta.content
+            if token:
+                yield token
+
+    return token_generator()

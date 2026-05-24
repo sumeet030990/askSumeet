@@ -46,10 +46,10 @@ def load_chat_screen():
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    reply = generate_ai_response(prompt, chat_history=st.session_state.get("messages", []))
+    with st.chat_message("assistant"):
+        with st.spinner("Thinking..."):
+            reply = str(st.write_stream(generate_ai_response(prompt, chat_history=st.session_state.get("messages", []))))
+
     assistant_msg = make_message("assistant", reply)
     st.session_state["messages"].append(assistant_msg)
     log_message(session_id, assistant_msg)
-
-    with st.chat_message("assistant"):
-        st.markdown(reply)
