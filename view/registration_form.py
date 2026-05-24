@@ -1,6 +1,7 @@
 import streamlit as st
 from uuid import uuid4
 from app.logger import log_session_start
+from app.notifications import send_session_notification
 
 def load_registration_form():
     st.write("Please enter your details to begin chatting.")
@@ -18,5 +19,6 @@ def load_registration_form():
             st.session_state["session_id"] = session_id
             st.session_state["user_profile"] = user_profile
             log_session_start(session_id, user_profile)
+            send_session_notification(session_id, user_profile)
             st.rerun()
         
