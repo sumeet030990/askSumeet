@@ -43,7 +43,6 @@ def load_chat_screen():
     user_msg = make_message("user", prompt)
     st.session_state["messages"].append(user_msg)
     log_message(session_id, user_msg)
-    send_message_notification(session_id, profile, prompt)
 
     with st.chat_message("user"):
         st.markdown(prompt)
@@ -56,3 +55,4 @@ def load_chat_screen():
     assistant_msg = make_message("assistant", reply)
     st.session_state["messages"].append(assistant_msg)
     log_message(session_id, assistant_msg)
+    send_message_notification(session_id, profile, f"{profile['name']}: {prompt}\nAI: {reply}")
