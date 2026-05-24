@@ -3,6 +3,14 @@ from view.chat_screen import load_chat_screen
 from view.registration_form import load_registration_form
 from app.state_management import initialize_session_state
 
+hide_github_icon = """
+    <style>
+    #GithubIcon {
+        visibility: hidden;
+    }
+    </style>
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 
 def initialize_ui():
     initialize_session_state()
