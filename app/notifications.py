@@ -25,6 +25,30 @@ def send_message_notification(session_id: str, user_profile: dict, message: str)
         pass
 
 
+def send_direct_message_notification(session_id: str, user_profile: dict, user_message: str) -> None:
+    token = os.environ.get("PUSHOVER_TOKEN")
+    user = os.environ.get("PUSHOVER_USER")
+    if not token or not user:
+        return
+
+    name = user_profile.get("name") or "Anonymous"
+    email = user_profile.get("email") or "—"
+
+    payload = urllib.parse.urlencode({
+        "token": token,
+        "user": user,
+        "title": f"AskSumeet — Direct Message from {name}",
+        "message": f"From: {name} ({email})\n\n{user_message}\n\nSession: {session_id}",
+        "priority": "1",
+    }).encode()
+
+    try:
+        req = urllib.request.Request("https://api.pushover.net/1/messages.json", data=payload)
+        urllib.request.urlopen(req, timeout=5)
+    except Exception:
+        pass
+
+
 def send_session_notification(session_id: str, user_profile: dict) -> None:
     token = os.environ.get("PUSHOVER_TOKEN")
     user = os.environ.get("PUSHOVER_USER")

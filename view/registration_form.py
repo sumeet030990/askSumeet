@@ -13,12 +13,15 @@ def load_registration_form():
         submitted = st.form_submit_button("Start Session")
 
         if submitted:
+            if not name.strip():
+                st.error("Name is required.")
+                st.stop()
             session_id = str(uuid4())
             user_profile = {"name": name, "phone": phone, "email": email}
             st.session_state["session_started"] = True
             st.session_state["session_id"] = session_id
             st.session_state["user_profile"] = user_profile
             log_session_start(session_id, user_profile)
-            send_session_notification(session_id, user_profile)
+            # send_session_notification(session_id, user_profile)
             st.rerun()
         
