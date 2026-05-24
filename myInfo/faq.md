@@ -30,7 +30,7 @@ A: Yes, I currently serve as Frontend Lead on the NeighborlySoftwares project (t
 A: Yes, actively. I've completed courses in Data Science, Machine Learning, Deep Learning, NLP, Generative AI, and Agentic AI. I'm now looking for opportunities to blend my full-stack background with AI-driven development.
 
 **Q: Why are you interested in AI?**  
-A: [ADD YOUR PERSONAL ANSWER HERE – Why does AI excite you? What problem do you want to solve?]
+A: AI feels like the next big shift in tech, and I want to be part of building it — not just using it. With 9+ years of full-stack experience, I can see exactly where AI fits into real products, and that combination is what excites me most.
 
 ---
 
@@ -40,7 +40,7 @@ A: [ADD YOUR PERSONAL ANSWER HERE – Why does AI excite you? What problem do yo
 A: Very much so. I've worked with clients from the USA and UK throughout my career — including Batory Foods, NeighborlySoftwares, Tessellate, and UCB Portal. I'm used to async communication and cross-timezone collaboration.
 
 **Q: How do you handle unclear requirements?**  
-A: [ADD YOUR ANSWER HERE]
+A: I break the requirement into what's clear vs unclear. I deliver the clear part first, then loop back with the client using that working piece as a reference point — it's much easier to refine something tangible than to debate abstracts. It also builds trust early.
 
 **Q: What's your approach to code quality?**  
 A: I follow component-based architecture in React, REST API best practices in Node, and patterns like MVC and Repository Pattern in Laravel. I believe maintainability is as important as functionality.
