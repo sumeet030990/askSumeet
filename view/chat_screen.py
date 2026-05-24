@@ -2,6 +2,7 @@ import streamlit as st
 from app.state_management import make_message
 from app.ai import generate_ai_response
 from app.logger import log_message
+from app.notifications import send_message_notification
 
 def load_chat_screen():
     st.write("You can ask about Sumeet Personal and Professional details, his work experience, education, skills, projects, and more.")
@@ -42,6 +43,7 @@ def load_chat_screen():
     user_msg = make_message("user", prompt)
     st.session_state["messages"].append(user_msg)
     log_message(session_id, user_msg)
+    send_message_notification(session_id, profile, prompt)
 
     with st.chat_message("user"):
         st.markdown(prompt)

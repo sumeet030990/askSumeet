@@ -1,3 +1,25 @@
 {
- 
+  "2026-05-24": {
+    "58d955dd-e211-4b1c-964c-73e51f62d739": {
+      "started_at": "2026-05-24T17:47:50",
+      "last_active": "2026-05-24T17:47:59",
+      "user": {
+        "name": "Rudra Jadhav",
+        "email": "",
+        "phone": "07378744740"
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "how are you?",
+          "timestamp": "2026-05-24T17:47:58"
+        },
+        {
+          "role": "assistant",
+          "content": "I don't have that information. You can reach out to Sumeet directly to ask.",
+          "timestamp": "2026-05-24T17:47:59"
+        }
+      ]
+    }
+  }
 }
