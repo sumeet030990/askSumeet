@@ -1,0 +1,35 @@
+{
+  "2026-05-24": {
+    "c08322e5-9540-4a1c-b18e-6a43bc0e92d8": {
+      "started_at": "2026-05-24T16:11:54",
+      "last_active": "2026-05-24T16:12:58",
+      "user": {
+        "name": "sam",
+        "email": "",
+        "phone": ""
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "hi",
+          "timestamp": "2026-05-24T16:11:57"
+        },
+        {
+          "role": "assistant",
+          "content": "It's nice to chat with you. Is there something I can help you with or would you like to know more about me, Sumeet?",
+          "timestamp": "2026-05-24T16:12:13"
+        },
+        {
+          "role": "user",
+          "content": "where are you currently located?",
+          "timestamp": "2026-05-24T16:12:27"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm currently based in Nagpur, Maharashtra, India.",
+          "timestamp": "2026-05-24T16:12:58"
+        }
+      ]
+    }
+  }
+}

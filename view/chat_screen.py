@@ -1,6 +1,7 @@
 import streamlit as st
 from app.state_management import make_message
 from app.ai import generate_ai_response
+from app.logger import log_message
 
 def load_chat_screen():
     st.write("You can ask about Sumeet Personal and Professional details, his work experience, education, skills, projects, and more.")
@@ -36,13 +37,19 @@ def load_chat_screen():
 
     if "messages" not in st.session_state:
         st.session_state["messages"] = []
-    st.session_state["messages"].append(make_message("user", prompt))
-    
+    session_id = st.session_state.get("session_id", "")
+
+    user_msg = make_message("user", prompt)
+    st.session_state["messages"].append(user_msg)
+    log_message(session_id, user_msg)
+
     with st.chat_message("user"):
         st.markdown(prompt)
-    
+
     reply = generate_ai_response(prompt, chat_history=st.session_state.get("messages", []))
-    print(" st.session_state:",  st.session_state)  # Debugging statement
-    st.session_state["messages"].append(make_message("assistant", reply))
+    assistant_msg = make_message("assistant", reply)
+    st.session_state["messages"].append(assistant_msg)
+    log_message(session_id, assistant_msg)
+
     with st.chat_message("assistant"):
         st.markdown(reply)
