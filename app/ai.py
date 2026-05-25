@@ -24,9 +24,10 @@ def generate_ai_response(prompt: str, chat_history: list | None = None) -> tuple
 
     system_instruction = build_system_instruction(context)
 
+    recent_history = (chat_history or [])[-6:]  # last 3 exchanges to stay within token budget
     messages = [
         {"role": "system", "content": system_instruction},
-        *({"role": m["role"], "content": m["content"]} for m in (chat_history or [])),
+        *({"role": m["role"], "content": m["content"]} for m in recent_history),
         {"role": "user", "content": prompt},
     ]
 
