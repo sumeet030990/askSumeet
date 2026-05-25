@@ -6,6 +6,10 @@ import urllib.parse
 def send_message_notification(session_id: str, user_profile: dict, message: str) -> None:
     token = os.environ.get("PUSHOVER_TOKEN")
     user = os.environ.get("PUSHOVER_USER")
+    
+    allowSending = os.environ.get("SEND_PUSHOVER_NOTIFICATIONS", "True").lower() == "true"
+    if not allowSending:
+        return
     if not token or not user:
         return
 
@@ -28,6 +32,10 @@ def send_message_notification(session_id: str, user_profile: dict, message: str)
 def send_direct_message_notification(session_id: str, user_profile: dict, user_message: str) -> None:
     token = os.environ.get("PUSHOVER_TOKEN")
     user = os.environ.get("PUSHOVER_USER")
+    
+    allowSending = os.environ.get("SEND_PUSHOVER_NOTIFICATIONS", "True").lower() == "true"
+    if not allowSending:
+        return
     if not token or not user:
         return
 
@@ -52,6 +60,10 @@ def send_direct_message_notification(session_id: str, user_profile: dict, user_m
 def send_session_notification(session_id: str, user_profile: dict) -> None:
     token = os.environ.get("PUSHOVER_TOKEN")
     user = os.environ.get("PUSHOVER_USER")
+    
+    allowSending = os.environ.get("SEND_PUSHOVER_NOTIFICATIONS", "True").lower() == "true"
+    if not allowSending:
+        return  
     if not token or not user:
         return
 

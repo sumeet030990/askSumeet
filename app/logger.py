@@ -54,7 +54,8 @@ def _load() -> dict:
 
 
 def _save(data: dict) -> None:
-    _save_file(LOG_FILE, data)
+    if os.environ.get("LOG_CONVERSATION", "True").lower() == "true":
+        _save_file(LOG_FILE, data)
 
 
 def log_session_start(session_id: str, user_profile: dict) -> None:
